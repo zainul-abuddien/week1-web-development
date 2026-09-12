@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zain — Developer Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f7f9;
+    --border: #e3e5eb;
+    --text: #000000;
+    --text-muted: #000000;
+    --accent: #000000;
+    --accent-teal: #000000;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  header {
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+  }
+
+  header p.role {
+    margin: 10px 0 0;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  section {
+    margin-bottom: 52px;
+  }
+
+  section h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+  }
+
+  section h2::before {
+    content: "// ";
+    color: var(--accent-teal);
+  }
+
+  p {
+    margin: 0;
+    color: var(--text);
+    max-width: 62ch;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .skills li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  .project {
+    padding: 0;
+  }
+
+  .project h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .project p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .contact-list li {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    font-size: 0.98rem;
+  }
+
+  .contact-list span.label {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    min-width: 72px;
+  }
+
+  .contact-list a {
+    color: var(--accent-teal);
+    text-decoration: none;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 48px 20px 72px; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Zainul Abdien</h1>
+    <p class="role">AI/ML Engineering Student — NMAMIT, Nitte</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a 2nd year AI/ML branch student at NMAMIT, Nitte. I'm still early
+      in my journey as a developer, learning by building small, practical
+      projects alongside my coursework.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Python (Basics)</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Daily News Updater</h3>
+      <p>A script/tool that automatically fetches and delivers the day's news updates.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><span class="label">Phone</span><a href="tel:+917975655929">+91 79756 55929</a></li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
