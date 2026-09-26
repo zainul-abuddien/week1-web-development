@@ -143,3 +143,6 @@ footer {
         padding: 40px 20px;
     }
 }
+body {
+    background: yellow !important;
+}
