@@ -1,147 +1,356 @@
+
+/* =================================
+   ZAINUL ABDIEN - DEVELOPER PORTFOLIO
+   WEEK 02 CSS
+================================= */
+
+/* 1. COLORS AND GLOBAL SETTINGS */
+
+:root {
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+
+    --text: #172033;
+    --text-muted: #64748b;
+
+    --accent: #2563eb;
+    --accent-teal: #0d9488;
+
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+/* CSS Box Model */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* 2. BODY */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #000000;
-    color: #ff0505;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Navigation */
+/* 3. MAIN CONTAINER */
 
-nav {
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 20px 50px;
-
-    background-color: #222;
+.wrap {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 70px 28px 50px;
 }
 
-nav h1 {
-    color: white;
+/* 4. HEADER */
+
+header {
+    background: var(--surface);
+    padding: 38px 34px;
+    margin-bottom: 30px;
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
 }
 
-nav ul {
+h1 {
+    color: var(--text);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+header p.role {
+    margin-top: 12px;
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* 5. ALL SECTIONS */
+
+section {
+    background: var(--surface);
+    padding: 30px 34px;
+    margin-bottom: 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Section hover effect */
+
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
+}
+
+/* 6. SECTION HEADINGS */
+
+section h2 {
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Small teal marker before headings */
+
+section h2::before {
+    content: "";
+    display: inline-block;
+
+    width: 5px;
+    height: 23px;
+
+    background: var(--accent-teal);
+    border-radius: 5px;
+}
+
+/* 7. PARAGRAPHS */
+
+p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    max-width: 65ch;
+}
+
+/* 8. SKILLS - FLEXBOX */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
-nav a {
+/* Each skill is a pill */
+
+.skills li {
+    background: #eff6ff;
+    color: #1d4ed8;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+
+    padding: 9px 16px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.skills li:hover {
+    background: var(--accent);
     color: white;
+    transform: translateY(-3px);
+}
+
+/* 9. PROJECTS */
+
+.project {
+    background: #f8fafc;
+
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    border-left-color: var(--accent-teal);
+    box-shadow: var(--shadow);
+}
+
+.project h3 {
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* 10. CONTACT - FLEXBOX */
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    font-size: 0.95rem;
+}
+
+.contact-list span.label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-width: 72px;
+}
+
+.contact-list a {
+    color: var(--accent);
+    font-weight: 600;
     text-decoration: none;
 
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #00adb5;
+.contact-list a:hover {
+    color: var(--accent-teal);
+    text-decoration: underline;
 }
 
-
-/* Sections */
-
-section {
-    padding: 60px 10%;
-}
-
-section h2 {
-    margin-bottom: 20px;
-}
-
-
-/* Skills */
-
-.skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.skill {
-    background-color: white;
-
-    padding: 20px 40px;
-
-    border: 1px solid #ddd;
-    border-radius: 10px;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    transition: transform 0.3s ease;
-}
-
-.skill:hover {
-    transform: translateY(-5px);
-}
-
-
-/* Projects */
-
-.projects-container {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-.project-card {
-    background-color: white;
-
-    padding: 25px;
-
-    border: 1px solid #ddd;
-    border-radius: 12px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-
-/* Footer */
+/* 11. FOOTER */
 
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: white;
+
+    margin-top: 30px;
+    padding: 22px;
+
+    color: var(--text-muted);
+    font-size: 0.85rem;
+
+    border-top: 1px solid var(--border);
 }
 
-
-/* Mobile */
+/* 12. TABLET RESPONSIVE DESIGN */
 
 @media (max-width: 768px) {
-
-    nav {
-        flex-direction: column;
-        gap: 15px;
+    .wrap {
+        max-width: 100%;
+        padding: 45px 22px;
     }
 
-    nav ul {
-        flex-direction: column;
-        text-align: center;
+    h1 {
+        font-size: 2.1rem;
     }
 
-    .projects-container {
-        grid-template-columns: 1fr;
+    header {
+        padding: 30px 26px;
     }
 
     section {
-        padding: 40px 20px;
+        padding: 26px;
     }
 }
-body {
-    background: yellow !important;
+
+/* 13. MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 480px) {
+    .wrap {
+        padding: 25px 14px;
+    }
+
+    header {
+        padding: 25px 20px;
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        letter-spacing: -0.5px;
+    }
+
+    header p.role {
+        font-size: 0.88rem;
+    }
+
+    section {
+        padding: 22px 19px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+
+    section h2 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.92rem;
+    }
+
+    .skills {
+        gap: 9px;
+    }
+
+    .skills li {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+    }
+
+    .project {
+        padding: 17px;
+    }
+
+    .contact-list li {
+        gap: 7px;
+    }
+
+    footer {
+        margin-top: 20px;
+        padding: 18px 10px;
+    }
+}
+
+/* 14. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
 }
